@@ -1,0 +1,2 @@
+# Proposal
+I want to create a music library management system that will allow a user to search for information about a particular artist, album, or playlist using the Spotify Web API. The application will also have login, logout, and user authentication features. It will be useful for learning more about music and being able to keep track of that information.
