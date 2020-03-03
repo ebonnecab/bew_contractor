@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h3>Patient Management System {% if records %}<small class="text-muted">({{ records|length }} Record{{ records|length|pluralize:"s" }})</small>{% endif %}</h3>
+  <hr>
+  {% if records %}
+    <div class="card-columns">
+      {% for record in records %}
+      <li>
+        {{record.patient.name}}
+      </li>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-primary" role="alert">No pages to display.</div>
+  {% endif %}
+{% endblock %}
