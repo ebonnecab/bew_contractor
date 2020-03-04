@@ -1,2 +1,36 @@
 # Proposal
-I want to create a music library management system that will allow a user to search for information about a particular artist, album, or playlist using the Spotify Web API. The application will also have login, logout, and user authentication features. It will be useful for learning more about music and being able to keep track of that information.
+
+I want to create a hospital records management system that will allow a user to login and record information about that patient's visit. It will be useful for helping doctors keep track of patient records. 
+
+Library
+    - Models
+        v1
+        - Doctor
+            - Name
+            - Img?
+            - Department
+            - Title
+            - Date of hire
+            - User Name
+            - Password
+
+        - Patient
+            - Name
+            - Sex
+            - Date of Birth
+
+        Patient Record
+            - Reason for visit
+            - Name
+            - Date
+            - Prescription
+            - Follow-up Care needed?
+    - Views
+        - List of Patient Records
+        - Detail View Patient Record
+
+Account
+    - Views
+        - Login
+        - Logout
+        - Signup
