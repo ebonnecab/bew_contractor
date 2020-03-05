@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h3>Welcome to our Patient Records Management System!</h3>
+  {% if user.is_authenticated %}
+    <p>{% if records %}<small class="text-muted">({{ records|length }} Record{{ records|length|pluralize:"s" }})</small>{% endif %}</p>
+    <hr>
+    {% if records %}
+      <div>
+        {% for record in records %}
+          <li>
+          <a href="{% url 'detail' record.id %}">
+          {{record.patient.first_name}} {{ record.description }}</a>
+          </li>
+        {% endfor %}
+      </div>
+    {% else %}
+    <div class="alert alert-primary" role="alert">No pages to display.</div>
+    {% endif %}
+  {% else %}
+  <p>Please Login or Register to see this page.</p>
+  {% endif %}
+    
+{% endblock %}

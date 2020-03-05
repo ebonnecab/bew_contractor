@@ -7,16 +7,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from .models import Record, Patient, Doctor
 from .forms import RecordForm
-
-class MultipleModelView(TemplateView):
-    template_name = 'records/patient_detail.html'
-
-    def get_context_data(self, **kwargs):
-         context = super(MultipleModelView, self).get_context_data(**kwargs)
-         context['Record'] = Record.objects.get_queryset().all()
-         context['Patient'] = Patient.objects.get_queryset().all()
-         context['Doctor'] = Doctor.objects.get_queryset().all()
-         return context
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 class RecordsListView(ListView):
     """ Renders a list of all Pages. """

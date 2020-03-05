@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="style.css">
     <title>{% block title %}Hospital Management System{% endblock %}</title>
 </head>
 
 <body>
-    <div id="sidebar">
-        {% block sidebar %}
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/records/">Records</a></li>
-            <li><a href="/admin/">Admin</a></li>
-        </ul>
-        {% endblock %}
-    </div>
+    <nav>
+        <form>
+            {% if user.is_authenticated %}
+              <a href="{% url 'new' %}">New Record</a>
+              <a href="{% url 'index' %}">View Records</a>
+              <a href="{% url 'patient_list' %}">View Patients</a>
+              <a href="{% url 'logout' %}">Log Out</a>
+            {% else %}
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'signup' %}">Register</a>
+            {% endif %}
+          </form>
+    </nav>
+  
 
     <div id="content">
         {% block content %}{% endblock %}
