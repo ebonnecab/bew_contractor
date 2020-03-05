@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Patient Details</h1>
+    {% if patient%}
+    <div>
+        <ul>
+            <li>Patient: {{patient.first_name }} {{patient.last_name}}</li>
+            <li>Sex: {{ patient.sex}}</li>
+            <li>DOB: {{ patient.dob}}</li>
+            <li>Sex: {{ patient.sex}}</li>
+    {% endif %} 
+
+        </ul>
+    </div>
+
+{% endblock %}

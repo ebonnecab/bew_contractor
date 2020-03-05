@@ -7,17 +7,20 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Patient(models.Model):
-    name = models.CharField(max_length=200)
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
     dob = models.DateTimeField('date of birth')
     sex = models.CharField(max_length=200)   
 
     def __str__(self):
-        return self.name
+        return self.first_name + ' ' + self.last_name
 
 class Doctor(models.Model):
     # user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
-    title = models.CharField(max_length=200)
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    title = models.CharField(max_length=100)
+    specialty = models.CharField(max_length=200)
     dept = models.CharField(max_length=200)
     date_hire = models.DateTimeField('date hired')
     
@@ -25,10 +28,10 @@ class Doctor(models.Model):
         return timezone.now() - self.date_hire
 
     def __str__(self):
-        return self.name
+        return self.title + " " + self.first_name
 
 class Record(models.Model):
-    
+
     patient = models.ForeignKey(Patient, on_delete=models.PROTECT,
                                help_text="The patient associated with this record")
 
@@ -36,7 +39,7 @@ class Record(models.Model):
                                help_text="The doctor that entered this record.")
 
     visit_date = models.DateTimeField(help_text='date of visit.')
-
+    
     description = models.CharField(max_length=500, default=None,
         help_text="Describe reason for patient visit.")
     

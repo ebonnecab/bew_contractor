@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Patient Record</h1>
+    <h1>Patient Management System</h1>
+    <h2>Visit Details</h2>
     <div>
         <ul>
-            <li>Patient: {{ record.patient.name }}</li>
-            <li>Doctor: {{ record.doctor.name}}</li>
+            <li>Patient: {{ record.patient.first_name }}</li>
+            <li>Doctor: {{ record.doctor.first_name}}</li>
             <li>Date of Visit: {{ record.visit_date }}</li>
             <li>Description: {{ record.description }}</li>
             <li>Prescription: {{ record.prescription }}</li>
