@@ -13,6 +13,10 @@
             <li>Follow Up Care: {{ record.follow_up_care }}</li>
         </ul>
     </div>
+    <hr>
+    <a href="{% url 'records_update' record.id %}">Update Record</a>
+    <a href="{% url 'records_delete' record.id %}">Delete Record</a>
+
 
 {% endblock %}
 
