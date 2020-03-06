@@ -7,8 +7,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from .models import Record, Patient, Doctor
 from .forms import RecordForm
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
 
 class RecordsListView(ListView):
     """ Renders a list of all Pages. """

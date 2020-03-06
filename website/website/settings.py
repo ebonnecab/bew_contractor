@@ -25,7 +25,7 @@ SECRET_KEY = '7*f!*oj^y71ylaw(bky(sj_svcntr*ycpphc5^x#wkhr8v%--@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'recordsys.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'recordsys.herokuapp.com', '127.0.0.1']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
@@ -33,6 +33,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 INSTALLED_APPS = [
     'records.apps.RecordsConfig',
+    'accounts.apps.AccountsConfig',
+    'homepage.apps.HomepageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
