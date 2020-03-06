@@ -25,8 +25,9 @@ SECRET_KEY = '7*f!*oj^y71ylaw(bky(sj_svcntr*ycpphc5^x#wkhr8v%--@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'recordsys.herokuapp.com']
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Application definition
 
